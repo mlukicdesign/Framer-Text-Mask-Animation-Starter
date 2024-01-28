@@ -1,4 +1,5 @@
 .container {
+  flex-basis: 50%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -7,15 +8,33 @@
   margin-bottom: 300px;
 }
 
-.body{
-  font-size: 5vw;
+.contentContainer {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.body {
+  font-size: 2vw;
+  font-weight: lighter;
+  line-height: 1.5em;
+  flex-basis: 50%;
+}
+
+.imageContainer {
+  flex-basis: 50%;
+  width: 50%;
+  display: flex;
+  overflow: hidden;
+  height: 500px;
 }
 
 .lineMask{
   overflow: hidden;
 }
 
-.lineMask p{
+.lineMask p {
   margin: 0px;
   font-weight: 700;
 }
