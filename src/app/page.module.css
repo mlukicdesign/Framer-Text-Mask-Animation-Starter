@@ -13,13 +13,17 @@
   overflow: hidden;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .body {
+  display: flex;
+  flex-direction: column;
   font-size: 2vw;
+  gap: 2rem;
   font-weight: lighter;
   line-height: 1.5em;
-  flex-basis: 50%;
+  width: 50%;
 }
 
 .imageContainer {
@@ -28,6 +32,7 @@
   display: flex;
   overflow: hidden;
   height: 500px;
+  justify-content: center;
 }
 
 .lineMask{
@@ -41,4 +46,11 @@
 
 .lineMask{
   overflow: hidden;
+}
+
+.paragraphStyle {
+  margin: 0px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 2rem;
 }

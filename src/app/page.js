@@ -10,6 +10,10 @@ const phrases = [
   "Design is the art of turning constraints into creative opportunities, where every pixel tells a story."
 ]
 
+const paragraphs = [
+  "I am a designer and developer with a passion for creating beautiful and functional digital experiences. I have a strong background in design and development, and I am always looking for new ways to push the boundaries of what is possible. I am a designer and developer with a passion for creating beautiful and functional digital experiences. I have a strong background in design and development, and I am always looking for new ways to push the boundaries of what is possible."
+]
+
 
 export default function Home() {
   return (
@@ -34,7 +38,12 @@ export function MaskText() {
 
   const animation = {
     initial: {y: "100%", opacity: 0},
-    enter: i => ({y: "0", opacity: 60, transition: {duration: 0.75, ease: [0.33, 1, 0.68, 1],  delay: 0.075 * i}})
+    enter: i => ({y: "0", opacity: 1, transition: {duration: 1, ease: [0.33, 1, 0.68, 1],  delay: 0.0}})
+  }
+
+  const paraAnimation = {
+    initial: {y: "20%", opacity: 0},
+    enter: i => ({y: "0", opacity: 1, transition: {duration: 1, ease: [0.33, 1, 0.68, 1],  delay: 0.3}})
   }
 
   const imageAnimation = {
@@ -51,24 +60,40 @@ export function MaskText() {
   });
 
 
-  return(
+  return (
+
     <div className={styles.contentContainer}>
-    <div ref={ref} className={styles.body}>
-      {
-        phrases.map( (phrase, index) => {
-          return <div key={index} className={styles.lineMask}>
-            <motion.p custom={index} variants={animation} initial="initial" animate={inView ? "enter" : ''}>{phrase}</motion.p>
-          </div>
-    
-        })
-      }
-    </div>
-      <motion.div className={styles.imageContainer} variants={imageAnimation} initial="initial" animate={inView ? "enter": ''}>
-        <Image src="/resource-database-lZKI2P-J2jE-unsplash.jpg" alt="Picture of the author" width={500} height={550}/>
+      <div ref={ref} className={styles.body}>
+        <div>
+
+          {phrases.map((phrase, index) => (
+            <div key={index} className={styles.lineMask}>
+              <motion.p custom={index} variants={animation} initial="initial" animate={inView ? "enter" : ""}>
+                {phrase}
+              </motion.p>
+            </div>
+          ))}
+        </div>
+        <div className={styles.paragraphStyle}>
+          {paragraphs.map((paragraph, index) => (
+            <motion.div key={index} variants={paraAnimation} initial="initial" animate={inView ? "enter" : ""}>
+              {paragraph}
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+
+      <motion.div className={styles.imageContainer} variants={imageAnimation} initial="initial" animate={inView ? "enter" : ""}>
+        <Image src="/resource-database-lZKI2P-J2jE-unsplash.jpg" alt="Picture of the author" width={500} height={550} />
       </motion.div>
     </div>
-  )
-}
+  );
+  };
+
+
+
+
 
 // Process
 

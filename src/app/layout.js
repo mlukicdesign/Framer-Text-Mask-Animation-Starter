@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Text Mask Animation",
-  description: "You'll Thank me later",
+  description: "Base for text mask animation",
 };
 
 export default function RootLayout({ children }) {
